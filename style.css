@@ -1,11 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+.loader{
+    padding: 20rem;
+    font-family: 'Blippo Blk BT';
+    font-size: 55px;
+    color: #77b0e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: -1.3px 0 #fff, 0 1.3px #fff, 1.3px 0 #fff, 0 -1.3px #fff;
+}
+
 
 body {
     padding: 0;
     margin: 0;
     background-color: rgb(255,190,218);
     color:#000;
-    font-family: 'DM Mono', monospace;
 }
 
 .card-list{
@@ -57,3 +66,9 @@ body {
 .card:not(:first-child) { /*:not-> negation*/
     margin-left: -130px;
 } 
+
+.main {
+    opacity: 0;
+    display: none;
+    transition: opacity 2s ease-in;
+}
