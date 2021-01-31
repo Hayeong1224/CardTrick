@@ -1,40 +1,75 @@
-.loader{
-    padding: 20rem;
-    font-family: 'Blippo Blk BT';
-    font-size: 55px;
-    color: #77b0e8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: -1.3px 0 #fff, 0 1.3px #fff, 1.3px 0 #fff, 0 -1.3px #fff;
-}
-
-
-body {
+*{
     padding: 0;
     margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(255,190,218);
-    color:#000;
+    overflow-x: scroll;
+}
+
+.loader{/*https://www.youtube.com/watch?v=BwhTKJFpKSw, https://youtu.be/nisjlGgouEA 참고 */ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+    font-family: 'Blippo Blk BT';
+    margin: 0;
+    padding: 0;
+}
+
+h4{
+    position: relative;
+    font-size: 55px;
+    color: rgb(255,190,218);
+    -webkit-text-stroke: 1.3px #fff;
+}
+
+h4:before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #77b0e8;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: animate 9s linear infinite;
+}
+
+@keyframes animate{
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%,90%
+    {
+        width: 100%;
+    }
 }
 
 .card-list{
     display: flex;
     padding: 6rem;
-    overflow-x: scroll;
 }
 
-.card-list::-webkit-scrollbar{
+body::-webkit-scrollbar{
     width: 10px;
     height:20px;
 }
 
-.card-list::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     background: rgb(255, 174, 209);
     border-radius: 10px;
     box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
 }
 
-.card-list::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background: rgb(255,190,218);
 }
 
@@ -51,6 +86,7 @@ body {
     border-radius: 18px;
     background-image: url(images/card.png);
     box-shadow: -1rem 0 3rem rgb(170, 92, 126);
+    color:#000;
 
     transition: .2s;
 }
