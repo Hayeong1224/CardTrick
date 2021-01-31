@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(255,190,218);
+    color:#000;
+    font-family: 'DM Mono', monospace;
+}
+
+.card-list{
+    display: flex;
+    padding: 6rem;
+    overflow-x: scroll;
+}
+
+.card-list::-webkit-scrollbar{
+    width: 10px;
+    height:20px;
+}
+
+.card-list::-webkit-scrollbar-thumb {
+    background: rgb(255, 174, 209);
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+
+.card-list::-webkit-scrollbar-track {
+    background: rgb(255,190,218);
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    width:300px;
+    height:500px;
+    min-width: 300px;
+
+    border-radius: 18px;
+    background-image: url(images/card.png);
+    box-shadow: -1rem 0 3rem rgb(170, 92, 126);
+
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+}
+
+.card:hover~.card { /*선택된 카드 다음의 모든 카드들이 선택됨*/
+    transform: translateX(130px);
+}
+
+.card:not(:first-child) { /*:not-> negation*/
+    margin-left: -130px;
+} 
